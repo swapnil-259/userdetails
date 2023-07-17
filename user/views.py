@@ -137,11 +137,13 @@ def createtask(request:HttpRequest):
                  return JsonResponse({'message':'task not found'})
             else:
                 return JsonResponse({'message':'please enter task number'})
+            # else :
+                # return JsonResponse({'message':'user do not logged in'})
     elif request.method =='DELETE':
            
-            delete_data = json.loads(request.body)
+            # delete_data = json.loads(request.body)
             # user_id = delete_data.get("user_id")
-            dlt_task_no = delete_data.get("dlt_task_no")
+            dlt_task_no = request.GET.get("dlt_task_no")
             # tasks = Register_user.objects.filter(id = user_id).first()
             # if tasks:
             if dlt_task_no !="":
