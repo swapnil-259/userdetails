@@ -5,6 +5,7 @@ from django.http import HttpRequest
 from django.utils import timezone
 import json
 
+
 def registeruser(request):
     if request.method == 'POST':
         user_data = json.loads(request.body) 
